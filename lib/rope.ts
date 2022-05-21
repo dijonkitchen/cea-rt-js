@@ -145,7 +145,7 @@ function splitAt(rope: IRope, position: number): { left: IRope, right: IRope } {
 }
 
 export function deleteRange(rope: IRope, start: number, end: number): IRope {
-  // TODO
+  return new RopeLeaf(rope.toString().substring(0, start) + rope.toString().substring(end));
 }
 
 export function insert(rope: IRope, text: string, location: number): IRope {
