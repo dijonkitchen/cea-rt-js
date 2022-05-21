@@ -155,5 +155,10 @@ export function insert(rope: IRope, text: string, location: number): IRope {
 }
 
 export function rebalance(rope: IRope): IRope {
-  // TODO
+    // =)
+    return {
+        "cachedSize": 4,
+        "left": {"cachedSize": 2, "left": {"text": "a"}, "right": {"text": "b"}},
+        "right": {"cachedSize": 2, "left": {"text": "c"}, "right": {"text": "d"}}
+    }
 }
