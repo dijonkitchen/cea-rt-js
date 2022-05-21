@@ -138,10 +138,10 @@ export function createRopeFromMap(map: MapRepresentation): IRope {
 // This is an internal API. You can implement it however you want. 
 // (E.g. you can choose to mutate the input rope or not)
 function splitAt(rope: IRope, position: number): { left: IRope, right: IRope } {
-  return {
-    left: new RopeLeaf(rope.toString().substring(0, position)),
-    right: new RopeLeaf(rope.toString().substring(position)),
-  }
+  return new RopeBranch(
+    new RopeLeaf(rope.toString().substring(0, position)),
+    new RopeLeaf(rope.toString().substring(position)),
+  )
 }
 
 export function deleteRange(rope: IRope, start: number, end: number): IRope {
